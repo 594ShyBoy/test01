@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>用户信息更新</title>
+    <script src="/js/axios-0.18.0.js"></script>
+    <script src="/js/vuejs-2.5.16.js"></script>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h1>修改数据</h1>
+<div id="app">
+  <form>
+    <div>
+        <span>name:</span>
+        <span><input name="name" type="text" v-model="name"/></span><br>
+        <span>age:</span>
+        <span><input name="age" type="text" v-model="age"/></span><br>
+        <span>sex:</span>
+        <span><input name="sex" type="text" v-model="sex"/></span>
+    </div>
+      <div>
+          <!-- 让默认的行为失效 -->
+          <button @click.prevent="submit">提交</button>
+      </div>
+  </form>
+
+</div>
+<script>
+  const app = new Vue({
+
+    el: "#app",
+
+    data: {
+        name:'',
+        age:'',
+        sex:''
+    },
+    methods: {
+      submit(){
+          alert(this.name+this.age+this.sex)
+          axios.get()
+      }
+    }
+  })
+
+
+
+
+</script>
+</body>
+</html>

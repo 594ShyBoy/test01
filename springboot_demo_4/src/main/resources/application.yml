@@ -1,0 +1,31 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3307/jtadmin?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
+    username: root
+    password: root
+  thymeleaf:
+      #设置页面前缀
+      prefix: classpath:/templates/
+      #设置页面后缀
+      suffix: .html
+      #是否使用缓存
+      cache: false
+
+#springboot整合mybatisPlus配置
+mybatis-plus:
+  type-aliases-package: com.jt.pojo   #定义别名包
+  mapper-locations: classpath:/mybatis/mappers/*.xml
+  #开启驼峰映射
+  configuration:
+    map-underscore-to-camel-case: true
+
+# 添加MP日志  打印执行的SQL语句
+logging:
+  level:
+    com.jt.Mapper: debug
+
+

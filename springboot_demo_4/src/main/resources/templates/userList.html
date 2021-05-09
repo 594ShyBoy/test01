@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>user列表</title>
+    <script src="/js/axios-0.18.0.js"></script>
+    <script src="/js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+<h1 align="center">User列表</h1>
+<div id="app">
+    <table border="1" cellspacing="0" width="400px" align="center">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+            <th>sex</th>
+            <th>操作</th>
+        </tr>
+        <!--<tr v-for="(user,index) in userList">-->
+        <tr align="center" th:each="user: ${userList}">
+            <td>[[${user.id}]]</td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.age}"></td>
+            <td th:text="${user.sex}"></td>
+            <td>
+                <input type="button" value="删除" @click="deleteUserById(user.id)">
+                <input type="button" value="新增" @click="">
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>
