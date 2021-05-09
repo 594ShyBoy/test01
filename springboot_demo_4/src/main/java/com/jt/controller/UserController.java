@@ -93,6 +93,7 @@ public class UserController {
 
         int i = userService.addUser(user);
         System.out.println(i);
+        System.out.println(i);
 
         return "redirect:/userList";//重新请求userList
     }
